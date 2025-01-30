@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState,useEffect } from 'react'
 import './App.css'
 import confetti from 'canvas-confetti'
 import { Square } from './components/Square'
@@ -58,6 +56,13 @@ const [turn, setTurn] = useState(() => {
       setWinner(false)
     }
   }
+
+  useEffect(()=>{
+    // como minimo se ejecuta una vez
+    // en el segundo parametro especificamos en que ocasiones queremos que se vuelva ha ejecutar
+    // [] quiere decir que se ejecuta solo cuando se lanza el componente
+    console.log('useEffect')
+  },[])
 
   return (
     <main className='board'>
